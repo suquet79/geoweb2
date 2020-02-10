@@ -1,0 +1,77 @@
+<html lang="es">
+    <head>
+        <title>Leaflet iGNASi</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="autor"/>
+        <meta name="description" content="descripción página">
+        <meta name="robots" content="index,follow">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" /> 
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+            }
+        #map {
+        height: 100%;
+        width: 100%;
+            }
+    </style>
+
+    <script>
+        var map,capa_osm,capa_esri,capa_terreno;
+        var control_capas,control_escalas;
+
+        function init(){
+            map = L.map('map', {
+                center:[41.3954, 2.16859],
+                zoom: 13
+                });
+
+        capa_osm= L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {     /*tipo de capa base raster que se añade al objeto L.map*/
+                maxZoom : 19,
+                minZoom : 1,
+                attribution : "OSM"});
+        capa_osm.addTo(map);
+        capa_esri = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                maxZoom: 17,
+                minZoom: 1,
+                attribution: 'Tiles © Esri'});
+        capa_esri.addTo(map);
+        capa_terreno = L.tileLayer('http://{s}.tile.stamen.com/terrain-background/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: 'Stamen terrain',
+                    opacity: 0.5
+                });
+        capa_terreno.addTo(map);  
+
+
+        var baseLayers = {      /*https://leafletjs.com/reference-1.6.0.html#control-layers*/
+            "capa osm": capa_osm,
+            "capa esriiiiiii": capa_esri
+            };
+        var overlays = {
+            "capa terreny": capa_terreno
+            };
+        
+        control_capas = L.control.layers(baseLayers, overlays);
+        control_capas.addTo(map);
+
+        control_escalas=L.control.scale();  /*https://leafletjs.com/reference-1.6.0.html#control-scale*/
+        control_escalas.addTo(map);  /*esta abaix a l'esquerre*/
+
+        
+        }
+    
+    </script>
+    </head>
+
+    <body onLoad="init()">  
+        <div id="map"></div>
+    </body>
+</html>
+
+        
