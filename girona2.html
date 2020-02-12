@@ -267,7 +267,7 @@
                     'source-layer': "sepeulturas_sXX-1goi5q", //poner vuestro titulo capa
                     paint:{
                         'circle-radius': 3,
-                        'circle-opacity':0.8,
+                        'circle-opacity':0.1,
                         'circle-color':"rgb(255, 0, 0)"
                     }
                 });
@@ -285,7 +285,7 @@
                     'source-layer': "sepeulturas_sXIX-4sfjc0", //poner vuestro titulo capa
                     paint:{
                         'circle-radius': 3,
-                        'circle-opacity':0.8,
+                        'circle-opacity':0.1,
                         'circle-color':"rgb(0, 0, 255)"
                     }
                 });
@@ -323,108 +323,17 @@
             
 
             if (tipo==="arboles"){
-              
+                alert (tipo);
                 if (activo){
                         map.setLayoutProperty("arboles", "visibility", "visible");
                     }else{
                         map.setLayoutProperty("arboles", "visibility", "none");
+                        
                     }
             }else if (tipo==="autobus"){
-               
-                if (activo){
-                        map.setLayoutProperty("autobus", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("autobus", "visibility", "none");
-                    }
-            }else if (tipo==="bancos"){
-               
-                if (activo){
-                        map.setLayoutProperty("bancos", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("bancos", "visibility", "none");
-                    }
-            }else if (tipo==="farolas"){
-               
-                if (activo){
-                        map.setLayoutProperty("farolas", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("farolas", "visibility", "none");
-                    }
-            }else if (tipo==="semaforos"){
-               
-                if (activo){
-                        map.setLayoutProperty("semaforos", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("semaforos", "visibility", "none");
-                    }
-            }else if (tipo==="altares"){
-               
-                if (activo){
-                        map.setLayoutProperty("altares", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("altares", "visibility", "none");
-                    }
-            }else if (tipo==="columbario"){
-                
-                if (activo){
-                        map.setLayoutProperty("columbario", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("columbario", "visibility", "none");
-                    }
-            }else if (tipo==="hipogeo"){
-               
-                if (activo){
-                        map.setLayoutProperty("hipogeo", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("hipogeo", "visibility", "none");
-                    }
-            }else if (tipo==="nicho"){
-               
-                if (activo){
-                        map.setLayoutProperty("nicho", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("nicho", "visibility", "none");
-                    }
-            }else if (tipo==="panteon"){
-               
-                if (activo){
-                        map.setLayoutProperty("panteon", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("panteon", "visibility", "none");
-                    }
-            }else if (tipo==="tumbas"){
-              
-                if (activo){
-                        map.setLayoutProperty("tumbas", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("tumbas", "visibility", "none");
-                    }
-            }else if (tipo==="XIX"){
-               
-                if (activo){
-                        map.setLayoutProperty("sepulturaXIX", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("sepulturaXIX", "visibility", "none");
-                    }
-            }else if (tipo==="XX"){
-              
-                if (activo){
-                        map.setLayoutProperty("sepulturaXX", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("sepulturaXX", "visibility", "none");
-                    }
+                alert (tipo);
             }
-            else {
-              
-                if (activo){
-                        map.setLayoutProperty("cementerio", "visibility", "visible");
-                    }else{
-                        map.setLayoutProperty("cementerio", "visibility", "none");
-                    }
-            }
-
-
-
+            
         }
      
 
@@ -440,7 +349,7 @@
         <p><input OnChange="activarCapa(this.checked,this.name)"   type="checkbox" checked name="autobus"> Autobus</p>
         <p><input OnChange="activarCapa(this.checked,this.name)"   type="checkbox" checked name="bancos"> Bancos</p>
         <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="farolas"> Farolas</p>
-        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="semaforos"> Semaforos</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="semafors"> Semaforos</p>
         <h1>Sepulturas</h1>
         <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="altares"> Altares</p>
         <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="columbario"> Columbario</p>
