@@ -5,6 +5,8 @@
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css" type="text/css"/>
     <link href='css/mapabase.css' rel='stylesheet' />  
 
 
@@ -42,20 +44,9 @@
             map.addControl(new mapboxgl.AttributionControl({compact: true}));
             map.addControl(new mapboxgl.NavigationControl());
 
-            map.addControl(new mapboxgl.GeolocateControl({
-                            positionOptions: {
-                                enableHighAccuracy: true
-                            },
-                            trackUserLocation: true
-                        }));
             map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
 
-            var marker = new mapboxgl.Marker()
-                 .setLngLat([2.8364498, 41.9720266])  
-                 .addTo(map);
-
-
-
+          
             map.on('load', function () {
 
                 //MOBILIARIO////////////////////////////////////////////////////////////
@@ -300,24 +291,6 @@
                 });
 
             
-                 //CEMGI
-                /* map.addSource("CEMENTERIO", {
-                    type: "vector",
-                    url: "mapbox://suquet79.74oga876" //poner mapbox://vuestro id
-                }); //fin map source
-
-                map.addLayer({
-                    id: "CEMENTERIO",
-                    type: "fill",
-                    source: "CEMENTERIO",
-                    'source-layer': "cemgi-9jdeu2", //poner vuestro titulo capa
-                    paint:{
-                        
-                        'fill-opacity':0.5,
-                        'fill-color':"rgb(0, 0, 255)",
-                        'fill-outline-color':"rgb(0, 0, 0)"
-                    }
-                });*/
                 
                 //CEMGI
                 map.addSource("CEMENTERIO", {
@@ -364,6 +337,15 @@
         <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Farolas</p>
         <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Semaforos</p>
         <h1>Sepulturas</h1>
+        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Altares</p>
+        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Columbario</p>
+        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Hipogeo</p>
+        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Nicho</p>
+        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Panteon</p>
+        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Tumba</p>
+        <h1>Sepulturas por siglos</h1>
+        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Siglo XIX</p>
+        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Siglo XX</p>
         
 
         
