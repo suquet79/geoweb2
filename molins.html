@@ -10,6 +10,7 @@
     <link href='css/mapabase.css' rel='stylesheet' />  
 
 
+
     <style>
         body {
             margin: 0;
@@ -23,10 +24,67 @@
             height: 100%
         }
     </style>
-</head>    
-    <body >
+    <script>
+        var map1;
+            function init() {
+            mapboxgl.accessToken = 'pk.eyJ1Ijoic3VxdWV0NzkiLCJhIjoiY2s0OHRicWN6MTVkcTNsbGY0MmI2NXRwOSJ9.Vhk9cAQbRBmhaYrlfG5ABQ';
+            map1 = new mapboxgl.Map({
+                container: 'map',
+                //style: 'mapbox://styles/suquet79/ck697yvgl0od51ipimihneb6y',
+                style:'mapbox://styles/mapbox/satellite-v9',
+                center: [2.0139846, 41.4149324],
+                zoom: 16,
+                pitch: 45,
+                attributionControl: false
+            });
 
-        <p>Hola</p>
+            /*var map2 = new mapboxgl.Map({
+                container: 'map',
+                style: 'https://geoserveis.icgc.cat/contextmaps/hibrid.json',
+                center: [2.0139846, 41.4149324],
+                zoom: 13,
+                hash: true,
+                pitch: 45,
+                attributionControl: false
+            });*/
+
+            //https://docs.mapbox.com/mapbox-gl-js/api/#user%20interface
+            map1.addControl(new mapboxgl.AttributionControl({compact: true}));
+            map1.addControl(new mapboxgl.NavigationControl());
+
+            map1.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
+      
+
+        }
+
+        function canviarCapa(activo){
+            if (activo){
+                alert ('activar');
+                map1.setStyle('mapbox://styles/mapbox/satellite-v9');
+            }else{
+                alert ('desactivar');
+                map1.setStyle('mapbox://styles/mapbox/satellite-v9');
+
+                }
+
+            }
+
+
+     
+
+            
+    </script>
+
+</head>    
+    <body onload="init()">
+
+        <div class="panelTopIzquierda">
+            <h1>Capes</h1>
+            <p><input OnChange="canviarCapa(this.checked)"   type="checkbox" checked> Basic</p>
+            <p><input OnChange="canviarCapa(this.checked)"   type="checkbox" > ICGC</p>
+        </div>
+
+        <div id="map"></div>
     </body>
     
     </html>  

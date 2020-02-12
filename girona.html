@@ -319,7 +319,18 @@
 
 
         }
+        function activarCapa(activo,tipo){
 
+            if (activo){
+                alert (tipo);
+                map.setLayoutProperty("arboles", "visibility", "visible");
+            }else{
+                alert (tipo);
+                map.setLayoutProperty("arboles", "visibility", "none");
+
+                }
+
+            }
 
      
 
@@ -331,22 +342,23 @@
 
     <div class="panelTopIzquierda">
         <h1>Mobiliari</h1>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Arboles</p>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Autobus</p>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Bancos</p>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Farolas</p>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Semaforos</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="arboles"> Arboles</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="autobus"> Autobus</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="bancos"> Bancos</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="farolas"> Farolas</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value=""> Semaforos</p>
         <h1>Sepulturas</h1>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Altares</p>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Columbario</p>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Hipogeo</p>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Nicho</p>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Panteon</p>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Tumba</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="altares"> Altares</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="columbario"> Columbario</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="hipogeo"> Hipogeo</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="nicho"> Nicho</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="panteon"> Panteon</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value=""> Tumba</p>
         <h1>Sepulturas por siglos</h1>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Siglo XIX</p>
-        <p><input OnChange="activarEdificios(this.checked)"   type="checkbox" checked> Siglo XX</p>
-        
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="XIX"> Siglo XIX</p>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="XX"> Siglo XX</p>
+        <h1>Estructura</h1>
+        <p><input OnChange="activarCapa(this.checked,this.value)"   type="checkbox" checked value="Estructura"> Estructura</p>
 
         
         
