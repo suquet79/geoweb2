@@ -1,6 +1,6 @@
 
 
-.panelTopIzquierda {
+.panelTopIzquierda1 {
     position: absolute;
     top:20px;
     left: 20px;
@@ -13,5 +13,30 @@
     border-radius: 5px;
 }
 
+.panelTopIzquierda2 {
+    position: absolute;
+    top:80px;
+    left: 20px;
+    width: 150px;
+    z-index: 1000;
+    background-color: rgba(255,255,255,0.9);
+    padding: 10px;
+    font-size:10px;
+    color: #333333;
+    border-radius: 5px;
+}
+
+.panelTopIzquierda3 {
+    position: absolute;
+    top:140px;
+    left: 20px;
+    width: 150px;
+    z-index: 1000;
+    background-color: rgba(255,255,255,0.9);
+    padding: 10px;
+    font-size:10px;
+    color: #333333;
+    border-radius: 5px;
+}
 
 
