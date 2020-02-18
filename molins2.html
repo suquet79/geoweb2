@@ -45,8 +45,18 @@
 
             
 
-            map1.on('load', function () {
-                map1.addSource("edificios_molins", {   
+           /* map1.on('load', function () {
+                cargarEdificis();  
+            });*/
+
+
+
+        }
+
+        function cargarEdificis(activo){
+                if (activo){
+                    alert (" carrega");
+                    map1.addSource("edificios_molins", {   
                         type: "vector",
                         url: "mapbox://suquet79.0lebrtni"  // ID Tileset 
                         }); 
@@ -90,20 +100,10 @@
                         ],
                         "fill-extrusion-opacity": 0.7
                         }
-                    }); 
-            });
-
-
-
-        }
-
-        function cargarEdificis(activo){
-                if (activo){
-                    alert (" carrega");
-                    map1.addLayer("molins");
-                    
+                    });
                 }else{
                     map1.removeLayer("molins");
+                    map1.removeSource("edificios_molins");
                 }
 
         }
@@ -116,16 +116,7 @@
             }
         }
 
-        function rotarCapa(activo,timestamp) {
-            //alert (timestamp);
 
-            if (activo){
-                map1.rotateTo((timestamp / 100) % 360, { duration: 0 });
-                requestAnimationFrame(rotarCapa);
-            }else{
-                alert (" no ok");
-            }
-        }
 
             
     </script>
@@ -139,13 +130,10 @@
         <label for="satellite">satellite</label><br>
     </div>
     <div class="panelTopIzquierda2">
-        <p><input OnChange="cargarEdificis(this.checked)" checked  type="checkbox" name="rotar"> Activar 3D</p>
+        <p><input OnChange="cargarEdificis(this.checked)"   type="checkbox" name="rotar"> Activar 3D</p>
         
     </div>
-    <div class="panelTopIzquierda3">
-        <p><input OnChange="rotarCapa(this.checked,0)"   type="checkbox" name="rotar"> Rotar camara</p>
-        
-    </div>
+
    
 
     <div id="map"></div>
